@@ -7,6 +7,44 @@
 </head>
 <body>
 
+<form class="form-horizontal">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Bienvenu sur mon site</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Quel est ton nom ?</label>
+            <div class="col-md-8">
+                <input id="textinput" name="textinput" type="text" placeholder="Ton nom ici..." class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="selectbasic">Quel âge as-tu ?</label>
+            <div class="col-md-4">
+                <select id="selectbasic" name="selectbasic" class="form-control">
+                    <option value="1">Option one</option>
+                    <option value="2">Option two</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Où est-ce que tu habite ?</label>
+            <div class="col-md-8">
+                <input id="textinput" name="textinput" type="text" placeholder="Ta ville ici..." class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
 <script>
