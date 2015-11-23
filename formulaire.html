@@ -5,15 +5,15 @@
     <title>Un formulaire de bienvenu avec AngularJS</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 </head>
-<body ng-app="monApp">
-<div class="container" ng-controller="monControl">
+<body ng-app="monApp"> <!-- module angular -->
+<div class="container" ng-controller="monControl"> <!-- controller angular -->
     <form class="form-horizontal">
         <fieldset>
 
             <!-- Form Name -->
             <legend>Bienvenu sur mon site</legend>
 
-            <!-- Text input-->
+            <!-- Text input nom -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Quel est ton nom ?</label>
                 <div class="col-md-8">
@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <!-- Select Basic -->
+            <!-- Select Basic age -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="selectbasic">Quel âge as-tu ?</label>
                 <div class="col-md-4">
@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <!-- Text input-->
+            <!-- Text input ville -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Où est-ce que tu habite ?</label>
                 <div class="col-md-8">
@@ -40,7 +40,7 @@
                 </div>
             </div>
 
-            <!-- Button -->
+            <!-- Button de validation -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="singlebutton"></label>
                 <div class="col-md-4">
@@ -51,6 +51,7 @@
 </form>
 
 
+    <!-- Réponse à la validation du formulaire -->
     <div class="jumbotron" ng-show="reponse">
         <h1>Je te souhaite bonjour, {{nom}}</h1>
 
@@ -59,44 +60,18 @@
         <p>Et aussi que tu habite cette ville : <strong>{{ville}}</strong></p>
     </div>
 
+    <!-- Alert si le formulaire n'est pas correctement rempli -->
     <div class="btn-alert" ng-show="alert">
         <p>Merci de bien vouloir remplir tous les champs</p>
     </div>
 </div>
 </body>
+<!-- Lib framework AngularJS -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
-<script>
 
-    var monApp = angular.module('monApp', []);
+<!-- Module angularJS -->
+<script src="js/app.js"></script>
 
-    monApp.controller('monControl', function monControl ($scope) {
-
-        // Les âges de 0 à 99
-        var range = [];
-        total = 100;
-        for(var i=0;i<total;i++) {
-            range.push(i);
-        }
-        $scope.range = range;
-
-
-        // Par défault, la div class jumbotron n'est pas visible, la variable passé à ng-show est false
-        $scope.reponse = false;
-        $scope.alert = false;
-
-        // Pour afficher la réponse, on met une directive ng-click sur le bouton pour passer la variable à true
-        $scope.afficherReponse = function () {
-            if ($scope.nom && $scope.nb && $scope.ville != null) { // Si tous les champs sont remplis
-                $scope.reponse = true; // On affiche une réponse
-                $scope.alert = false; // On n'affiche pas d'alerte
-            }
-            else {
-                $scope.reponse = false; // On affiche une alerte
-                $scope.alert = true; // On n'affiche pas de réponse
-            }
-        }
-
-    });
-
-</script>
+<!-- Controller -->
+<script src="js/controller/MainController.js"></script>
 </html>
